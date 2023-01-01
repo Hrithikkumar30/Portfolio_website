@@ -15,7 +15,7 @@
                 <ul>
                     <li> <a href="#"> Home</a> </li>
                     <li> <a href="#"> About</a> </li>
-                    <li> <a href="#">Skills</a> </li>
+                    <!-- <li> <a href="#">Skills</a> </li> -->
                     <li> <a href="#">Projects</a> </li>
                     <li> <a href="#">Contact</a> </li>
 
@@ -42,18 +42,55 @@
                     <h1 class="sub-title">About Me</h1>
                     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum earum rerum dolores mollitia ex nesciunt commodi ratione illum, laudantium, eligendi sit dignissimos laboriosam veritatis molestias ducimus repudiandae, enim aliquam. Alias harum, eum in quae aliquam laboriosam tempore repellat, dolor eaque beatae, ipsam dolorem sed. Recusandae quia quaerat vero accusantium obcaecati nesciunt qui tempora, saepe in laborum. Officia adipisci qui consequuntur! </p>
                     <div class="tab-title">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
                     </div>
-                    <div class="tab-content">
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>UI/UX</span> <br></li>
+                            <li><span>Python/Java</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>SQL</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Data Analytics</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Machine Learning</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Statistics & Probability</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <!-- <ul>
+                            <li><span>Python/Java</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>SQL</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Data Analytics</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Machine Learning</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Statistics & Probability</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul> -->
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2020-2024</span><br> B.Tech in Data Science <br>NIIT UNIVERSITY.</li>
+                            <li><span>2020</span><br>Intermediate <br>Sri Chaitanya</li>
+                            <!-- <li><span>Data Analytics</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Machine Learning</span><br> Lorem ipsum dolor sit amet consectetur.</li>
+                            <li><span>Statistics & Probability</span><br> Lorem ipsum dolor sit amet consectetur.</li> -->
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+    </script>
 </body>
 </html>
